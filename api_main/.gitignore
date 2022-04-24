@@ -1,0 +1,11 @@
+dist
+package-lock.json
+node_modules
+uploads/**
+.idea
+.vscode
+*.log
+.env*
+
+
+!**/.gitkeep

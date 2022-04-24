@@ -1,0 +1,16 @@
+{
+  "dev": {
+    "driver": "pg",
+    "database": "postgres",
+    "schema": "public",
+    "user": "user",
+    "password": "pass"
+  },
+  "pg": {
+    "driver": "pg",
+    "database": "postgres",
+    "schema": "public",
+    "user": "user",
+    "password": "pass"
+  }
+}

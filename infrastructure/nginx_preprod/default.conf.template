@@ -1,0 +1,35 @@
+server {
+
+  listen 80;
+
+  upstream web-app {
+    server web_app_preprod:8080
+  }
+
+  upstream api-main {
+    server api_main_preprod:4000
+  }
+
+  location /api/ {
+    proxy_pass http://api-main; # note the trailing slash!
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+
+  location / {
+    proxy_pass http://web-app;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+
+
+
+  # error_page   500 502 503 504  /50x.html;
+
+  # location = /50x.html {
+  #   root   /usr/share/nginx/html;
+  # }
+
+}

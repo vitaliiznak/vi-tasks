@@ -1,0 +1,21 @@
+{
+  "dev": {
+    "driver": "pg",
+    "database": "postgres",
+    "schema": "public",
+    "host": {
+      "ENV": "DATABASE_HOST"
+    },
+    "user": {
+      "ENV": "DATABASE_USER"
+    },
+    "password": {
+      "ENV": "DATABASE_PASSWORD"
+    }
+  },
+  "pg": {
+    "driver": "pg",
+    "database": "postgres",
+    "schema": "public"
+  }
+}

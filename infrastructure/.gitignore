@@ -1,0 +1,5 @@
+pg_data_dev/*
+pg_data_prod/*
+sonar_scanner/*
+sonarqube/*
+!**/.gitkeep

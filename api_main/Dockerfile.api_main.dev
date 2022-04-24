@@ -1,0 +1,11 @@
+FROM node:17-alpine3.14
+
+WORKDIR /usr/src/app
+
+USER node
+ENV GREEN=\[\033[32m\]
+ENV YELLOW=\[\033[33m\]
+ENV RESET=\[\033[0m\]
+
+EXPOSE 4000
+

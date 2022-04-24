@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  sonarqube:
+    image: sonarqube:community
+    depends_on:
+      - db
+    environment:
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+    ports:
+      - "9000:9000"
+    networks:
+      - no-internet
+      - sonarnet
+  # sonarscanner:
+  #   container_name: sonarscanner
+  #   image: sonarsource/sonar-scanner-cli
+  #   networks:
+  #     - sonarnet
+  #     - sonarnet
+  #   volumes:
+  #     - $PWD/sonar_scanner/:/usr/src
+
+networks:
+
+  sonarnet:
+  no-internet:
+    driver: bridge
+    internal: true
