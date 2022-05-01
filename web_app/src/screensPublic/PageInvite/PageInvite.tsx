@@ -15,7 +15,7 @@ export default () => (
           {' '}
         </h2>
         <p>
-          Please login to see the invitation
+          Please login to be able to access an invitation link
         </p>
       </div>
     )}

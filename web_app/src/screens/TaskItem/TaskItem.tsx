@@ -173,6 +173,17 @@ const TaskItem = ({ id }: { id: string }) => {
         }}>
           {description}
         </Paragraph>
+        {Boolean(task.attachments.length) && (
+          <>
+            <div className={css`font-size: 12px; color: rgba(240,240,240, 0.7);`}>Attachments:</div>
+            <ul>
+              {task.attachments.map(attachment => {
+                return <li><a className={css`font-size: 10px;`} target="_blank" href={`${process.env.REACT_APP_STORAGE_URI}/${attachment?.uri}`}>{attachment?.filename}</a></li>
+              })}
+            </ul>
+          </>
+        )
+        }
         <div
           className={
             css`

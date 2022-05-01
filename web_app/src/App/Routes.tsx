@@ -46,7 +46,7 @@ const RequireAuth = ({ children }: { children: JSX.Element }) => {
   return children
 }
 
-const RequireNotAuth = ({ children }: { children: JSX.Element }) => {
+const RequireNoAuth = ({ children }: { children: JSX.Element }) => {
   const [token] = useAuthToken()
   if (token) {
     // Redirect them to the /login page, but save the current location they were
@@ -58,7 +58,6 @@ const RequireNotAuth = ({ children }: { children: JSX.Element }) => {
   return children
 }
 
-
 const RequestGlobalData = ({ children }: { children: JSX.Element }) => {
   const [token] = useAuthToken()
   const match = useMatch('/b/:boardId/*')
@@ -66,7 +65,6 @@ const RequestGlobalData = ({ children }: { children: JSX.Element }) => {
   const [getMe] = useLazyQuery<AccountMeQuery>(GET_ME)
   const [getDataBoards] = useLazyQuery<GetBoardsQuery>(GET_BOARDS)
   const [getBoard] = useLazyQuery<GetBoardQuery>(GET_BOARD)
-
 
   useEffect(() => {
     if (!Boolean(match?.params.boardId)) {
@@ -211,7 +209,6 @@ const Routes = (): ReactElement => {
                       </Layout.Content>
                     }
                   />
-
                 </Route>
 
               </Route>
@@ -274,7 +271,10 @@ const Routes = (): ReactElement => {
               <Calendar />
             </div>
           )} />
-
+          <Route path="*" element={
+            <Navigate replace to="/b" />
+          } />
+          {/* 
           <Route path="/p/invites/:inviteId" element={(
             <div className={
               css`
@@ -285,20 +285,26 @@ const Routes = (): ReactElement => {
             >
               <PageInviteAuthenteticated />
             </div>
-          )} />
+          )} /> */}
         </Route >
 
 
         {/* Other Auth routes */}
       </Route >
       {/* NOT AUTH ROUTES */}
-      <Route path="/login" element={
-        <RequireNotAuth>
+
+      <Route element={(
+        <RequireNoAuth>
+          <Outlet />
+        </RequireNoAuth>
+      )}>
+        <Route path="/login" element={
           <Layout className={css`height:100vh;`}>
             <PageLogin />
           </Layout>
-        </RequireNotAuth>
-      } />
+        } />
+        <Route path="*" element={<Navigate replace to="/login" />} />
+      </Route>
       <Route path="/p/invites/:inviteId"
         element={
           <Layout className={css`height:100vh;`}>
@@ -306,12 +312,8 @@ const Routes = (): ReactElement => {
           </Layout>
         } />
       {/* NOT AUTH ROUTES */}
-      <Route path="/" element={
-        <Navigate replace to="/b" />
-      } />
-      {/* <Route>
-        <Redirect to="/login" />
-      </Route> */}
+
+      {/* */}
     </RouterRoutes>
   )
 }

@@ -22,6 +22,7 @@ interface PollVlientWithAuxProps extends pg.PoolClient {
 async function getConnection() {
   const client = await pool.connect().catch(err => {
     console.error('getConnection', err)
+    throw err
   }) as PollVlientWithAuxProps
   if (!client.isSetup) {
     await client.query(`SET search_path TO ${escapePostgresql(schema)}`)
