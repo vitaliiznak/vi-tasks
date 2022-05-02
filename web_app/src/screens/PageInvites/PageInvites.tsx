@@ -98,10 +98,7 @@ export default ({
         )}
         className={stylesContainer}
       >
-
         <Outlet />
-
-
       </Card>
     </>
   )

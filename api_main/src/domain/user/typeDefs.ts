@@ -1,6 +1,10 @@
 import { gql } from 'apollo-server'
 
 export default gql`
+  input UserListFilterInput {
+    boardId: ID 
+  }
+
   type UserAvatar {
     pravatarId: String
     file: FileAttachment
@@ -15,7 +19,7 @@ export default gql`
 
 
   extend type Query {
-    userGetList: [User]!  @auth(requires: USER)
+    userGetList(filter:UserListFilterInput): [User]!  @auth(requires: USER)
     userGetById(id: ID): User @auth(requires: USER)
   }
 

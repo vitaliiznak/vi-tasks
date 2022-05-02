@@ -56,7 +56,7 @@ const InviteList = ({
       ),
     },
     {
-      title: 'Token',
+      title: 'Invitatiuon code',
       key: 'token',
       dataIndex: 'token'
     },

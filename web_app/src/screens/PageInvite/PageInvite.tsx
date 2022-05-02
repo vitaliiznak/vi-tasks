@@ -32,11 +32,12 @@ export default (
       },
     })
       .then((res) => {
-        if (!res?.data?.invitePublicGetById) {
+        console.log('res', res)
+        if (!res?.data?.inviteJoinBoard) {
           setErrorMessage('The token is invalid or link has expired')
           // throw new Error('The token is invalid or link has expired')
         } else {
-          message.success(`Now yoau are a member of a board ${data?.invitePublicGetById?.board?.title}`)
+          message.success(`Now yoa are a member of a board ${data?.invitePublicGetById?.board?.title}`)
           navigate(`/b/${data.invitePublicGetById.board.id}`)
         }
         return res

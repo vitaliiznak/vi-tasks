@@ -5,21 +5,21 @@ import UserService from '../../services/user'
 
 const commentCount = (
   _prev,
-  { filter }, // {req, res}
+  { filter },
   _context,
   _info,
 ) => CommentService.count(filter)
 
 const commentGetList = (
   _prev,
-  { filter, withReplies }, // {req, res}
+  { filter, withReplies },
   _context,
   _info,
 ) => CommentService.getList(filter, withReplies)
 
 const commentGetById = (
   _prev,
-  { id }, // {req, res}
+  { id },
   _context,
   _info,
 ) => CommentService.getById(id)
@@ -32,7 +32,7 @@ const commentCreate = (
       content,
       task,
     },
-  }, // {req, res}
+  },
   { user }: {
     user: TAuthorizedUser
   },
@@ -51,7 +51,7 @@ const commentReplyCreate = (
       content,
       previous,
     },
-  }, // {req, res}
+  },
   { user }: {
     user: TAuthorizedUser
   },
@@ -71,7 +71,7 @@ const commentUpdate = (
 
 const commentRemove = (
   _prev,
-  { id }, // {req, res}
+  { id },
   _context,
   _info,
 ) => CommentService.remove(id)

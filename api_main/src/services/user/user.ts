@@ -24,59 +24,71 @@ interface TUser {
 }
 
 const SELECT_FIELDS = sql`
-  id,
-  email,
-  full_name as "fullName",
-  created_at as "createdAt",
-  avatar as "avatar"
+  ${TABLES.ACCOUNT}.id as "id",
+  ${TABLES.ACCOUNT}.email as "email",
+  ${TABLES.ACCOUNT}.full_name as "fullName",
+  ${TABLES.ACCOUNT}.created_at as "createdAt",
+  ${TABLES.ACCOUNT}.avatar as "avatar"
 `
 const getById = (id: string, ctx?: TContext): Promise<TUser | null> => executeWithConnection(async (conn) => {
-  let whereClause = sql`WHERE id = ${escapePostgresql(id)} `
+  let whereClause = sql`WHERE   ${TABLES.ACCOUNT}.id = ${escapePostgresql(id)} `
 
   if (ctx && ctx.performedByUser) {
     whereClause = sql`
         ${whereClause}
           AND 
-            ${TABLES.ACCOUNT}.id 
+            ${TABLES.BOARD_ACCOUNT}.board 
           IN
-          (SELECT ${TABLES.BOARD_ACCOUNT}.account
+          (SELECT ${TABLES.BOARD_ACCOUNT}.board
             FROM ${TABLES.BOARD_ACCOUNT} WHERE ${TABLES.BOARD_ACCOUNT}.account
             IN (${escapePostgresql(ctx.performedByUser)})
           )`
   }
 
   const sqlStr = sql`
-      SELECT
+      SELECT DISTINCT
           ${SELECT_FIELDS}
-      FROM ${TABLES.ACCOUNT} 
+      FROM ${TABLES.ACCOUNT}
+      INNER JOIN ${TABLES.BOARD_ACCOUNT}
+      ON ${TABLES.BOARD_ACCOUNT}.account = ${TABLES.ACCOUNT}.id
      ${whereClause}
     `
+  console.log(sqlStr)
+
   const result = await conn.query(sqlStr)
   return result.rows.length ? result.rows[0] : null
 })
 
-const getList = (ctx: TContext): Promise<TUser[]> => executeWithConnection(async (conn) => {
+const getList = (filter: { boardId?: string }, ctx: TContext): Promise<TUser[]> => executeWithConnection(async (conn) => {
   let whereClause = sql` WHERE TRUE `
 
   if (ctx && ctx.performedByUser) {
     whereClause = sql`
         ${whereClause}
           AND 
-            ${TABLES.ACCOUNT}.id 
+            ${TABLES.BOARD_ACCOUNT}.board 
           IN
-          (SELECT ${TABLES.BOARD_ACCOUNT}.account
+          (SELECT ${TABLES.BOARD_ACCOUNT}.board
             FROM ${TABLES.BOARD_ACCOUNT} WHERE ${TABLES.BOARD_ACCOUNT}.account
             IN (${escapePostgresql(ctx.performedByUser)})
           )`
+  }
+
+  if (filter && filter.boardId) {
+    whereClause = sql`
+    ${whereClause} AND  ${TABLES.BOARD_ACCOUNT}.board = ${escapePostgresql(filter.boardId)}`
   }
 
   const sqlQuery = sql`
       SELECT
           ${SELECT_FIELDS}
       FROM ${TABLES.ACCOUNT}
+      INNER JOIN ${TABLES.BOARD_ACCOUNT}
+      ON ${TABLES.BOARD_ACCOUNT}.account = ${TABLES.ACCOUNT}.id
       ${whereClause}
       ORDER BY ${TABLES.ACCOUNT}.created_at DESC
     `
+
   const result = await conn.query(sqlQuery)
   return result.rows
 })

@@ -104,6 +104,12 @@ const getList = (filter: TFilter, ctx?: TContext): Promise<TInvite[]> => execute
           )`
   }
 
+  if (filter?.board) {
+    whereClause = sql`
+      ${whereClause}
+      AND ${TABLES.INVITE_TO_BOARD}.board = ${escapePostgresql(filter?.board)}`
+  }
+
   if (filter?.createdByAnyOf?.length) {
     whereClause = sql`
       ${whereClause}
@@ -153,6 +159,8 @@ const getList = (filter: TFilter, ctx?: TContext): Promise<TInvite[]> => execute
     if (stateArray.length) {
       whereClausesOr.push(
         sql`${TABLES.INVITE_TO_BOARD}.state IN (${stateArray.map((el) => escapePostgresql(el)).join(', ')})`)
+    }
+    if (whereClausesOr.length) {
       whereClause = `${whereClause} AND (${whereClausesOr.join(' OR ')})`
     }
   }
@@ -212,8 +220,8 @@ const create = ({
   description?: string
 }): Promise<TInvite> => executeWithConnection(
   async (conn) => {
-    const tokenBuff = await randomBytesP(8)
-    const token = tokenBuff.toString('hex')
+    //const tokenBuff = await randomBytesP(5)
+    const token = Math.random().toString(36).substring(2, 7).toUpperCase()
     const insertKeys = ['board', 'token', 'created_by']
     const InviteToBoardInsertRow = [
       escapePostgresql(boardId),

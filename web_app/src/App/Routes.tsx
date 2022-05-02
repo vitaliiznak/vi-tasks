@@ -1,7 +1,7 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import React, { ReactElement, useEffect } from 'react'
 import {
-  Layout, Spin,
+  Layout, Spin, Tooltip,
 } from 'antd'
 import {
   Routes as RouterRoutes,
@@ -100,6 +100,45 @@ const RequestGlobalData = ({ children }: { children: JSX.Element }) => {
   return children
 }
 
+const PageInvite = () => {
+  const [token] = useAuthToken()
+  if (!token) {
+    // Redirect them to the /login page, but save the current location they were
+    // trying to go to when they were redirected. This allows us to send them
+    // along to that page after they login, which is a nicer user experience
+    // than dropping them off on the home page.
+    return (
+      <Layout className={css`height:100vh;`}>
+        <PageInvitePublic />
+      </Layout>
+    )
+  }
+  return (
+    <RequireAuth>
+      <RequestGlobalData>
+
+        <Layout className={css`height:100vh;`}>
+          <SideMenu />
+          <Layout.Content
+            className={css`margin-left: 238px;`}
+          >
+            <div
+              className={
+                css`
+                max-width: 800px;
+                margin-left: 5vw;
+                margin-right: 18px;
+              `}>
+              <PageInviteAuthenteticated />
+            </div>
+          </Layout.Content>
+        </Layout>
+      </RequestGlobalData>
+    </RequireAuth >
+  )
+}
+
+
 const Routes = (): ReactElement => {
   return (
     <RouterRoutes>
@@ -128,16 +167,17 @@ const Routes = (): ReactElement => {
                 <PageDashboard />
               )} />
 
-              <Route path="invites" element={(
-                <Layout.Content
-                  className={css`
+              <Route path="invites"
+                element={(
+                  <Layout.Content
+                    className={css`
                 margin-right: 18px;
                 max-width: 800px;
                 margin-top: 8vh;`}
-                >
-                  <PageInvites />
-                </Layout.Content>
-              )} >
+                  >
+                    <PageInvites />
+                  </Layout.Content>
+                )} >
                 <Route
                   path={'active'}
                   element={
@@ -158,6 +198,13 @@ const Routes = (): ReactElement => {
                     />
                   }
                 />
+                <Route
+                  index
+                  element={
+                    < Navigate replace to='active' />
+                  }
+                />
+
               </Route>
               <Route path="members" >
 
@@ -268,24 +315,15 @@ const Routes = (): ReactElement => {
                 padding-right: 10px;
               `}
             >
-              <Calendar />
+              <h1 className={css`color: red;`}>Development in progress, comming soon</h1>
+              <Tooltip title="Development in progress" color={'red'}>
+                <Calendar />
+              </Tooltip>
             </div>
           )} />
           <Route path="*" element={
             <Navigate replace to="/b" />
           } />
-          {/* 
-          <Route path="/p/invites/:inviteId" element={(
-            <div className={
-              css`
-                max-width: 800px;
-                margin-left: 5vw;
-                margin-right: 18px;
-              `}
-            >
-              <PageInviteAuthenteticated />
-            </div>
-          )} /> */}
         </Route >
 
 
@@ -307,9 +345,7 @@ const Routes = (): ReactElement => {
       </Route>
       <Route path="/p/invites/:inviteId"
         element={
-          <Layout className={css`height:100vh;`}>
-            <PageInvitePublic />
-          </Layout>
+          <PageInvite />
         } />
       {/* NOT AUTH ROUTES */}
 

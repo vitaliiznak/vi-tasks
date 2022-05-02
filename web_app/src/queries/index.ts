@@ -256,8 +256,8 @@ export const COUNT_TASKS = gql`
 
 
 export const GET_USERS = gql`
-  query GetUsers {
-    userGetList {
+  query GetUsers($filter: UserListFilterInput) {
+    userGetList(filter: $filter) {
       id
       fullName
       email

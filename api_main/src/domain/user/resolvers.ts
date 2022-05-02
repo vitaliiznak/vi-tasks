@@ -4,7 +4,7 @@ import UserService from '../../services/user'
 
 const userGetById = (
   _prev,
-  { id }, // {req, res}
+  { id },
   { user }: {
     user: TAuthorizedUser
   },
@@ -13,12 +13,12 @@ const userGetById = (
 
 const userGetList = (
   _prev,
-  _args, // {req, res}
+  { filter },
   { user }: {
     user: TAuthorizedUser
   },
   _info,
-) => UserService.getList({ performedByUser: user.id })
+) => UserService.getList(filter, { performedByUser: user.id })
 
 export default {
   Query: {

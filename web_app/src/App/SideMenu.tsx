@@ -100,7 +100,7 @@ const onLogout = () => {
 }
 
 const { Sider } = Layout
-export default (): ReactElement => {
+const SideMenu = (): ReactElement => {
   const accountMe = useReactiveVar(gUserMe)
   const navigate = useNavigate()
   const isProfileRoute = useMatch('/members')
@@ -161,7 +161,6 @@ export default (): ReactElement => {
       </div>
     </div>
   )
-
 
   return (
     <Sider className={cssSider} theme="dark">
@@ -405,10 +404,15 @@ export default (): ReactElement => {
           className={({ isActive }) => `${cssMenuItem} ant-menu-item ${isActive ? cssActiveClassName : ''}`}
           to="/calendar"
         >
-          Calendar
+          <Tooltip title="Development in progress" color={'red'}>
+            Calendar
+          </Tooltip>
         </NavLink>
       </div>
       <FakeErrorsMenu />
     </Sider >
   )
 }
+
+
+export default SideMenu

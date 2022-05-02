@@ -16,13 +16,13 @@ export const UPLOAD_PATH = path.resolve(
   '../uploads',
 )
 export const saveFileList = async (filesList: Array<{
-  originFileObj: {
+  originFileObj: Promise<{
     // eslint-disable-next-line @typescript-eslint/ban-types
     createReadStream: Function
     filename: string,
     mimetype: string,
     encoding: string
-  }
+  }>
 }>) => {
   return Promise.all(
     filesList.map(async ({ originFileObj }) => {

@@ -5,7 +5,7 @@ import AccountService from '../../services/account'
 
 const accountSignup = async (
   _prev,
-  { input: { fullName, email, password } }, // {req, res}
+  { input: { fullName, email, password } },
   _context,
   _info,
 ) => {
@@ -15,7 +15,7 @@ const accountSignup = async (
 
 const accountLogin = async (
   _prev,
-  { email, password }, // {req, res}
+  { email, password },
   _context,
   _info,
 ) => {
@@ -30,7 +30,7 @@ const accountLogin = async (
 
 const accountMe = (
   _prev,
-  _args, // {req, res}
+  _args,
   { user }: {
     user: TAuthorizedUser
   },
@@ -43,7 +43,7 @@ const accountUpdate = (
     id, update: {
       fullName, email, avatar, removeAvatar,
     },
-  }, // {req, res}
+  },
   _context,
   _info,
 ) => {

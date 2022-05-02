@@ -2,7 +2,7 @@ import { mapSchema, getDirective, MapperKind } from '@graphql-tools/utils'
 import { GraphQLSchema } from 'graphql'
 
 
-export default function deprecatedDirectiveFn(directiveName: string) {
+export default function Deptrecated(directiveName: string) {
   return {
     deprecatedDirectiveTypeDefs: `directive @${directiveName}(reason: String) on FIELD_DEFINITION | ENUM_VALUE`,
     deprecatedDirectiveTransformer: (schema: GraphQLSchema) => mapSchema(schema, {

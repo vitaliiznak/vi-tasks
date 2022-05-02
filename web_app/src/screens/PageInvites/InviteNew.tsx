@@ -56,7 +56,7 @@ const InviteNew = ({
 
       </Form.Item>
       <p className={css`padding-bottom: 12px;`}>
-        Send the link and the token to the person you would like to invite
+        Send the link and the code to the person you would like to invite
         <br />
         <br />
         <p>
@@ -72,7 +72,7 @@ const InviteNew = ({
             </Link>
           </strong>
           <br />
-          Token:
+          Invitation Code:
           <br />
           <strong className={css`font-size:11px;`}>
             {invite.token}

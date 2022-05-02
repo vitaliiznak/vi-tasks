@@ -5,14 +5,14 @@ import UserService from '../../services/user'
 
 const taskCount = (
   _prev,
-  { filter }, // {req, res}
+  { filter },
   { user },
   _info,
 ) => TaskService.count(filter, { performedByUser: user.id })
 
 const taskGetList = (
   _prev,
-  { filter }, // {req, res}
+  { filter },
   { user }: {
     user: TAuthorizedUser
   },
@@ -21,7 +21,7 @@ const taskGetList = (
 
 const taskGetById = (
   _prev,
-  { id }, // {req, res}
+  { id },
   { user }: {
     user: TAuthorizedUser
   },
@@ -41,7 +41,7 @@ const taskCreate = (
       attachments,
       assigners,
     },
-  }, // {req, res}
+  },
   { user }: {
     user: TAuthorizedUser
   },
@@ -66,14 +66,14 @@ const taskUpdate = (
 
 const taskRemove = (
   _prev,
-  { id }, // {req, res}
+  { id },
   _context,
   _info,
 ) => TaskService.remove(id)
 
 const taskChangeState = (
   _prev,
-  { id, state }, // {req, res}
+  { id, state },
   _context,
   _info,
 ) => TaskService.update(id, {
@@ -82,7 +82,7 @@ const taskChangeState = (
 
 const taskArchive = (
   _prev,
-  { id }, // {req, res}
+  { id },
   _context,
   _info,
 ) => TaskService.update(id, {
@@ -91,7 +91,7 @@ const taskArchive = (
 
 const taskUnarchive = (
   _prev,
-  { id }, // {req, res}
+  { id },
   _context,
   _info,
 ) => TaskService.update(id, {

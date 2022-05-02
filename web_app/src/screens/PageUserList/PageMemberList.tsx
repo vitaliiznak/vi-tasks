@@ -1,5 +1,5 @@
-import { Button, Card, Modal } from 'antd'
 import React, { useState } from 'react'
+import { Button, Card, Modal } from 'antd'
 import { css } from '@emotion/css'
 
 import InviteNew from 'screens/PageInvites/InviteNew'
@@ -7,7 +7,7 @@ import MemberList from './MemberList'
 
 
 export default () => {
-  const [modalNewBoardConfig, setModalNewInviteConfig] = useState<any>(null)
+  const [modalNewBoardConfig, setModalNewInviteConfig] = useState<null | Record<string, unknown>>(null)
   const onClose = () => {
     setModalNewInviteConfig(null)
   }

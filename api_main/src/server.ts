@@ -2,7 +2,8 @@ import { ApolloServer, gql, } from 'apollo-server-express'
 import express from 'express'
 import { merge } from 'lodash'
 import cors from 'cors'
-import { GraphQLUpload, graphqlUploadExpress } from 'graphql-upload'
+import GraphQLUpload from 'graphql-upload/GraphQLUpload.js'
+import graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.js'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { constraintDirectiveTypeDefs } from 'graphql-constraint-directive'
 import jwt from 'jsonwebtoken'
@@ -240,7 +241,6 @@ const server = new ApolloServer({
 
 export const startup = async () => {
   const app = express()
-  // app.use("/auth", authRoutes);
   app.use(express.static(path.join(__dirname, '../public')))
   app.use('/storage', express.static(path.join(__dirname, '../uploads')))
   app.use(cors())

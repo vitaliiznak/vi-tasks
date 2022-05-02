@@ -2,7 +2,7 @@ import { defaultFieldResolver, GraphQLSchema } from 'graphql'
 import { mapSchema, getDirective, MapperKind } from '@graphql-tools/utils'
 import { AuthenticationError, gql } from 'apollo-server'
 
-export default function authDirectiveFn(directiveName: string) {
+export default function Auth(directiveName: string) {
   const typeDirectiveArgumentMaps: Record<string, any> = {}
   return {
     authDirectiveTypeDefs: gql`

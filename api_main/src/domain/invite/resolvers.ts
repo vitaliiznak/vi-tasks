@@ -77,7 +77,7 @@ const inviteJoinBoard = (
 
 const inviteInvalidate = (
   _prev,
-  { id }, // {req, res}
+  { id },
   _context,
   _info,
 ) => InviteService.remove(id)

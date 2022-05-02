@@ -10,7 +10,16 @@ import { GetUsersQuery } from 'queries/types'
 
 const MemberList = () => {
   const board = useReactiveVar(gSelectedBoard)
-  const { loading, data } = useQuery<GetUsersQuery>(GET_USERS)
+  const { loading, data } = useQuery<GetUsersQuery>(GET_USERS,
+    {
+      variables:
+      {
+        filter:
+        {
+          boardId: board?.id
+        },
+      },
+    })
   return (
 
     <List
@@ -40,7 +49,6 @@ const MemberList = () => {
         </List.Item>
       )}
     />
-
   )
 }
 

@@ -5,14 +5,14 @@ import UserService from '../../services/user'
 
 const boardCount = (
   _prev,
-  _req, // {req, res}
+  _req,
   { filter },
   _info,
 ) => BoardService.count(filter)
 
 const boardGetList = (
   _prev,
-  { filter }, // {req, res}
+  { filter },
   { user }: {
     user: TAuthorizedUser
   },
@@ -21,7 +21,7 @@ const boardGetList = (
 
 const boardGetById = (
   _prev,
-  { id }, // {req, res}
+  { id },
   { user }: {
     user: TAuthorizedUser
   },
@@ -35,7 +35,7 @@ const boardCreate = (
     {
       title,
     },
-  }, // {req, res}
+  },
   { user }: {
     user: TAuthorizedUser
   },
@@ -54,7 +54,7 @@ const boardUpdate = (
 
 const boardRemove = (
   _prev,
-  { id }, // {req, res}
+  { id },
   _context,
   _info,
 ) => BoardService.remove(id)
