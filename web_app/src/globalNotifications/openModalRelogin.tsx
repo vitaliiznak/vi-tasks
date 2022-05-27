@@ -8,7 +8,7 @@ import {
 import {
   Modal, Button,
 } from 'antd'
-import LoginForm from 'screens/LoginForm'
+import LoginForm from '@src/screens/LoginForm'
 import { css } from '@emotion/css'
 import { AUTH_TOKEN_LOCALSTORAGE_KEY } from '../appConstants'
 
@@ -21,7 +21,7 @@ export default () => {
   const apolloLoginClient = new ApolloClient({
     cache: new InMemoryCache(),
     link: new HttpLink({
-      uri: process.env.REACT_APP_GRAPHQL_URI,
+      uri: import.meta.env.VITE_APP_GRAPHQL_URI,
     }),
   })
   let secondsToGo = 100

@@ -20,7 +20,7 @@ export default function createLink(options?: {
   tokenStorage?: Storage
 }) {
   const tokenStorage = options?.tokenStorage || window.localStorage
-  const uri = process.env.REACT_APP_GRAPHQL_URI
+  const uri = import.meta.env.VITE_APP_GRAPHQL_URI
 
   const batchLink = new BatchHttpLink({
     uri,

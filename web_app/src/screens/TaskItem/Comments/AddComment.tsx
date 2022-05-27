@@ -4,9 +4,9 @@ import {
 } from 'antd'
 import { css } from '@emotion/css'
 import { useMutation, useReactiveVar } from '@apollo/client'
-import { CREATE_COMMENT, CREATE_REPLY_COMMENT } from 'queries'
-import AvatarZ from 'screens/components/AvatarZ'
-import { gUserMe } from 'appState/appState'
+import { CREATE_COMMENT, CREATE_REPLY_COMMENT } from '@src/queries'
+import AvatarZ from '@src/screens/components/AvatarZ'
+import { gUserMe } from '@src/appState/appState'
 
 const { TextArea } = Input
 const AddComment = ({

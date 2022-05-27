@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Card } from 'antd'
 import { useParams } from 'react-router-dom'
-import TaskItem from 'screens/TaskItem'
+import TaskItem from '@src/screens/TaskItem'
 import { css } from '@emotion/css'
 
 export default () => {

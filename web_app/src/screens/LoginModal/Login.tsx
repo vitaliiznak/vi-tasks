@@ -3,7 +3,7 @@ import {
   Card,
 } from 'antd'
 import { css } from '@emotion/css'
-import LoginForm from 'screens/LoginForm'
+import LoginForm from '@src/screens/LoginForm'
 
 export default () => (
   <Card

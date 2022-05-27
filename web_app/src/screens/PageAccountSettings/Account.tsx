@@ -7,11 +7,11 @@ import { useMutation, useReactiveVar } from '@apollo/client'
 import { FormItemProps } from 'antd/lib/form'
 import { PlusOutlined } from '@ant-design/icons'
 import ImgCrop from 'antd-img-crop'
-import { UPDATE_ACCOUNT } from 'queries'
+import { UPDATE_ACCOUNT } from '@src/queries'
 import { useForm } from 'antd/lib/form/Form'
-import { gUserMe } from 'appState/appState'
+import { gUserMe } from '@src/appState/appState'
 import { UploadFileStatus } from 'antd/lib/upload/interface'
-import { AccountUpdateMutation } from 'queries/types'
+import { AccountUpdateMutation } from '@src/queries/types'
 
 const normFile: FormItemProps['getValueFromEvent'] = (e) => (Array.isArray(e) ? e : e && e.fileList)
 const cssFormItem = css`
@@ -48,7 +48,7 @@ export default () => {
         uid: uri,
         name: filename,
         status: 'done',
-        url: `${process.env.REACT_APP_STORAGE_URI}/${uri}`,
+        url: `${import.meta.env.VITE_APP_STORAGE_URI}/${uri}`,
       }])
     } else {
       setFileList([])
@@ -107,7 +107,7 @@ export default () => {
         uid: uri,
         name: filename,
         status: 'done',
-        url: `${process.env.REACT_APP_STORAGE_URI}/${uri}`,
+        url: `${import.meta.env.VITE_APP_STORAGE_URI}/${uri}`,
       }])
     }
   }

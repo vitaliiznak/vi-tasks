@@ -2,9 +2,9 @@ import React, { useMemo, useState } from 'react'
 import { Button, Tooltip } from 'antd'
 import { css } from '@emotion/css'
 import { gql, useReactiveVar } from '@apollo/client'
-import Faker from 'scripts/Faker'
+import Faker from '@src/scripts/Faker'
 import { apolloReactClient } from './App'
-import { gSelectedBoard } from 'appState/appState'
+import { gSelectedBoard } from '@src/appState/appState'
 
 const NOT_EXISTING_QUERY = gql`
   query notExistingQuery {

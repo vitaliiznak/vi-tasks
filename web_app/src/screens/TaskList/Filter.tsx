@@ -4,9 +4,9 @@ import {
 } from 'antd'
 import { css } from '@emotion/css'
 import { useQuery } from '@apollo/client'
-import { PRIORITY } from 'appConstants'
-import { GET_USERS } from 'queries'
-import { GetUsersQuery } from 'queries/types'
+import { PRIORITY } from '@src/appConstants'
+import { GET_USERS } from '@src/queries'
+import { GetUsersQuery } from '@src/queries/types'
 
 const { Option } = Select
 

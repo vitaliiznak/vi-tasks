@@ -4,14 +4,14 @@ import {
 } from 'antd'
 import { css } from '@emotion/css'
 import { Link } from 'react-router-dom'
-import AvatarZ from 'screens/components/AvatarZ'
+import AvatarZ from '@src/screens/components/AvatarZ'
 import { useQuery, useReactiveVar } from '@apollo/client'
 import moment from 'moment'
 
 
-import { GET_INVITES } from 'queries'
-import { gSelectedBoard } from 'appState/appState'
-import { GetInvitesQuery } from 'queries/types'
+import { GET_INVITES } from '@src/queries'
+import { gSelectedBoard } from '@src/appState/appState'
+import { GetInvitesQuery } from '@src/queries/types'
 
 const InviteList = ({
   className = '',

@@ -7,11 +7,11 @@ import { useMutation, useReactiveVar } from '@apollo/client'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 
 import { Link, useNavigate } from 'react-router-dom'
-import { REMOVE_BOARD } from 'queries'
-import AvatarZ from 'screens/components/AvatarZ'
-import { gBoards, gSelectedBoard } from 'appState/appState'
+import { REMOVE_BOARD } from '@src/queries'
+import AvatarZ from '@src/screens/components/AvatarZ'
+import { gBoards, gSelectedBoard } from '@src/appState/appState'
 import BoardNew from './BoardNew'
-import { RemoveBoardMutation } from 'queries/types'
+import { RemoveBoardMutation } from '@src/queries/types'
 import moment from 'moment'
 
 const { confirm } = Modal

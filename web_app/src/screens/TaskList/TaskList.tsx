@@ -6,13 +6,13 @@ import { css } from '@emotion/css'
 import { useMutation, useQuery, useReactiveVar } from '@apollo/client'
 
 import { Link } from 'react-router-dom'
-import { PRIORITY } from 'appConstants'
-import { GET_TASKS, UNARCHIVE_TASK } from 'queries'
-import AvatarZ from 'screens/components/AvatarZ'
-import { gSelectedBoard } from 'appState/appState'
+import { PRIORITY } from '@src/appConstants'
+import { GET_TASKS, UNARCHIVE_TASK } from '@src/queries'
+import AvatarZ from '@src/screens/components/AvatarZ'
+import { gSelectedBoard } from '@src/appState/appState'
 import TaskItem from '../TaskItem'
 import { TypeTaskFilter } from './Filter'
-import { GetTasksQuery } from 'queries/types'
+import { GetTasksQuery } from '@src/queries/types'
 
 const auxStylesContainer = css`
 max-width: 1000px;

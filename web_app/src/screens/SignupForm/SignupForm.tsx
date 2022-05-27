@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Form, Input, Button } from 'antd'
 import { css } from '@emotion/css'
 import { useMutation } from '@apollo/client'
-import { SIGN_UP } from 'queries'
+import { SIGN_UP } from '@src/queries'
 import { AUTH_TOKEN_LOCALSTORAGE_KEY } from '../../appConstants'
 
 const cssFormItem = css`

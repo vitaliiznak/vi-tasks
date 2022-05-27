@@ -5,16 +5,16 @@ import { useMutation, useQuery, useReactiveVar } from '@apollo/client'
 import {
   Button, Form, message, Modal, Result, Spin,
 } from 'antd'
-import TaskNew from 'screens/TaskNew'
-import { DASHBOARD_TASK_COLUMNS } from 'appConstants'
-import { ARCHIVE_TASK, CHANGE_STATE, GET_TASKS } from 'queries'
-import TaskAddAssigneers from 'screens/TaskItem/TaskAddAssigneers'
-import { GetBoardQuery, GetTasksQuery } from 'queries/types'
-import { apolloReactClient } from 'App/App'
+import TaskNew from '@src/screens/TaskNew'
+import { DASHBOARD_TASK_COLUMNS } from '@src/appConstants'
+import { ARCHIVE_TASK, CHANGE_STATE, GET_TASKS } from '@src/queries'
+import TaskAddAssigneers from '@src/screens/TaskItem/TaskAddAssigneers'
+import { GetBoardQuery, GetTasksQuery } from '@src/queries/types'
+import { apolloReactClient } from '@src/App/App'
 import ArchiveTask from './ArchiveTask'
 import Column from './Column'
-import Faker from 'scripts/Faker'
-import { gSelectedBoard } from 'appState/appState'
+import Faker from '@src/scripts/Faker'
+import { gSelectedBoard } from '@src/appState/appState'
 
 const stylesColumns = css`
   margin-top: 3px;

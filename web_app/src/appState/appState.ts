@@ -1,5 +1,5 @@
 import { makeVar } from '@apollo/client'
-import { AccountMeQuery, GetBoardQuery, GetBoardsQuery } from 'queries/types'
+import { AccountMeQuery, GetBoardQuery, GetBoardsQuery } from '@src/queries/types'
 
 
 export const gSelectedBoard = makeVar<GetBoardQuery['board']>(null)

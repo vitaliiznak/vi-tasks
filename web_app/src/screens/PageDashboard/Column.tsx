@@ -2,7 +2,7 @@
 import React from 'react'
 import { Droppable } from 'react-beautiful-dnd'
 import { css } from '@emotion/css'
-import { DASHBOARD_TASK_COLUMNS } from 'appConstants'
+import { DASHBOARD_TASK_COLUMNS } from '@src/appConstants'
 import TaskCard from './TaskCard'
 
 const stylesColumn = css`

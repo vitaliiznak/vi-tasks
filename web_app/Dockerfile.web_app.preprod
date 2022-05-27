@@ -9,8 +9,8 @@ RUN npm install  --force
 # Copy app files
 COPY . .
 
-ARG REACT_APP_GRAPHQL_URI=/graphql
-ARG REACT_APP_STORAGE_URI=/storage
+ARG VITE_APP_GRAPHQL_URI=/graphql
+ARG VITE_APP_STORAGE_URI=/storage
 ENV NODE_ENV production
 # Build the app
 RUN npm run build

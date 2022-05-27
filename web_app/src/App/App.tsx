@@ -32,7 +32,7 @@ const defaultOptions: DefaultOptions = {
 const link = createLink()
 const cache = new InMemoryCache()
 export const apolloReactClient = new ApolloClient<NormalizedCacheObject>({
-  //uri: process.env.REACT_APP_GRAPHQL_URI,
+  //uri: import.meta.env.VITE_APP_GRAPHQL_URI,
   link,
   defaultOptions,
   cache,

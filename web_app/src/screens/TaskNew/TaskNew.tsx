@@ -8,8 +8,8 @@ import Dragger from 'antd/lib/upload/Dragger'
 import { InboxOutlined } from '@ant-design/icons'
 import { useMutation } from '@apollo/client'
 import { FormInstance } from 'antd/lib/form/hooks/useForm'
-import { CREATE_TASK } from 'queries'
-import { CreateTaskMutation } from 'queries/types'
+import { CREATE_TASK } from '@src/queries'
+import { CreateTaskMutation } from '@src/queries/types'
 
 const cssFormItem = css`
   display: block;

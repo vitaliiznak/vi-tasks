@@ -6,6 +6,7 @@ uploads/**
 .vscode
 *.log
 .env*
+*:Zone.Identifier
 
 web_app/.eslintcache
 

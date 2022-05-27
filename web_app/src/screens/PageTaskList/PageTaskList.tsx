@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { css } from '@emotion/css'
-import { gSelectedBoard } from 'appState/appState'
+import { gSelectedBoard } from '@src/appState/appState'
 import TaskList from '../TaskList'
 import TaskNew from '../TaskNew'
 import Filter from '../TaskList/Filter'

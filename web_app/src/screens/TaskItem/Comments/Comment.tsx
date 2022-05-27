@@ -4,7 +4,7 @@ import moment from 'moment'
 import { css } from '@emotion/css'
 import { CloseOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
-import AvatarZ from 'screens/components/AvatarZ'
+import AvatarZ from '@src/screens/components/AvatarZ'
 import AddComment from './AddComment'
 
 const Comment = ({

@@ -11,9 +11,9 @@ import {
 import { css } from '@emotion/css'
 import { PlusOutlined } from '@ant-design/icons'
 
-import AvatarZ from 'screens/components/AvatarZ'
-import BoardNew from 'screens/PageBoardList/BoardNew'
-import { gBoards, gSelectedBoard, gUserMe } from 'appState/appState'
+import AvatarZ from '@src/screens/components/AvatarZ'
+import BoardNew from '@src/screens/PageBoardList/BoardNew'
+import { gBoards, gSelectedBoard, gUserMe } from '@src/appState/appState'
 import { AUTH_TOKEN_LOCALSTORAGE_KEY } from '../appConstants'
 import FakeErrorsMenu from './FakeErrorsMenu'
 import { useReactiveVar } from '@apollo/client'

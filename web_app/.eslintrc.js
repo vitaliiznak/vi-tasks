@@ -8,7 +8,7 @@ module.exports = {
       "jsx": true,
       "tsx": true
     },
-    "ecmaVersion": 2021,
+    "ecmaVersion": 2022,
     "sourceType": "module"
   },
   "env": {
@@ -35,8 +35,6 @@ module.exports = {
 
   "rules": {
     "sonarjs/cognitive-complexity": 0,
-
-
     "sonarjs/no-nested-template-literals": 0,
     "@typescript-eslint/indent": 0,
     "@typescript-eslint/semi": [
@@ -51,13 +49,7 @@ module.exports = {
     ],
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/no-empty-function": 0,
-
-
-
     "react/prop-types": 0,
-
-
-
     "react/display-name": 0,
     "react/require-default-props": 0,
     "react/jsx-props-no-spreading": 0,
@@ -65,14 +57,8 @@ module.exports = {
       2,
       "never"
     ],
-
-
-
     "import/no-extraneous-dependencies": 0,
-
-
     "no-nested-ternary": 0,
-
     "max-len": [
       "error",
       {

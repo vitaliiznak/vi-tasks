@@ -5,7 +5,7 @@ import {
 } from 'antd'
 import { css } from '@emotion/css'
 import { useMutation, useQuery } from '@apollo/client'
-import { GET_INVITE_PUBLIC_BY_ID, JOIN_BOARD } from 'queries'
+import { GET_INVITE_PUBLIC_BY_ID, JOIN_BOARD } from '@src/queries'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const { Text } = Typography

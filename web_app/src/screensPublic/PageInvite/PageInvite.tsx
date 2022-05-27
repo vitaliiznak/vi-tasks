@@ -3,8 +3,8 @@ import {
   Card
 } from 'antd'
 import { css } from '@emotion/css'
-import LoginForm from 'screens/LoginForm'
-import SignupForm from 'screens/SignupForm'
+import LoginForm from '@src/screens/LoginForm'
+import SignupForm from '@src/screens/SignupForm'
 
 export default () => (
   <Card

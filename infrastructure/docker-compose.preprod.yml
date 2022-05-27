@@ -74,8 +74,8 @@ services:
       - "8080:8080"
     environment:
       - PS1=$$(whoami)@web_app_preprod:/
-      - REACT_APP_GRAPHQL_URI=/graphql
-      - REACT_APP_STORAGE_URI=/storage
+      - VITE_APP_GRAPHQL_URI=/graphql
+      - VITE_APP_STORAGE_URI=/storage
       - NODE_ENV=production
 
   nginx_preprod:

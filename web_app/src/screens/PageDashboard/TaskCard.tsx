@@ -5,9 +5,9 @@ import {
 import { css } from '@emotion/css'
 import { Draggable } from 'react-beautiful-dnd'
 import { Link } from 'react-router-dom'
-import { PRIORITY } from 'appConstants'
-import UserCart from 'screens/components/CreatedByAssignedCard'
-import { gSelectedBoard } from 'appState/appState'
+import { PRIORITY } from '@src/appConstants'
+import UserCart from '@src/screens/components/CreatedByAssignedCard'
+import { gSelectedBoard } from '@src/appState/appState'
 import { useReactiveVar } from '@apollo/client'
 
 const { Paragraph, Title } = Typography

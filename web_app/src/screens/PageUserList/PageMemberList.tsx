@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button, Card, Modal } from 'antd'
 import { css } from '@emotion/css'
 
-import InviteNew from 'screens/PageInvites/InviteNew'
+import InviteNew from '@src/screens/PageInvites/InviteNew'
 import MemberList from './MemberList'
 
 

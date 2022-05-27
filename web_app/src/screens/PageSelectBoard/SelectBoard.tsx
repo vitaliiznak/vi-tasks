@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router-dom'
 import { PlusOutlined } from '@ant-design/icons'
 import { useReactiveVar } from '@apollo/client'
 
-import BoardNew from 'screens/PageBoardList/BoardNew'
-import { gBoards } from 'appState/appState'
+import BoardNew from '@src/screens/PageBoardList/BoardNew'
+import { gBoards } from '@src/appState/appState'
 
 const { Option } = Select
 

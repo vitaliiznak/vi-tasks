@@ -1,11 +1,11 @@
 import { List } from 'antd'
 import React from 'react'
 import { useQuery, useReactiveVar } from '@apollo/client'
-import { GET_USERS } from 'queries'
+import { GET_USERS } from '@src/queries'
 import { Link } from 'react-router-dom'
-import AvatarZ from 'screens/components/AvatarZ'
-import { gSelectedBoard } from 'appState/appState'
-import { GetUsersQuery } from 'queries/types'
+import AvatarZ from '@src/screens/components/AvatarZ'
+import { gSelectedBoard } from '@src/appState/appState'
+import { GetUsersQuery } from '@src/queries/types'
 
 
 const MemberList = () => {

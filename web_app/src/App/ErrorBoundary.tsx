@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { PropsWithChildren } from 'react'
 import { Result, Button } from 'antd'
-import ContactSupport from 'globalNotifications/ContactSupport'
+import ContactSupport from '@src/globalNotifications/ContactSupport'
 
 export default class ErrorBoundary extends React.Component<PropsWithChildren<unknown>, { error: unknown }> {
   state = { error: undefined }

@@ -7,14 +7,14 @@ import {
   NavLink, useParams, useLocation,
 } from 'react-router-dom'
 import { css } from '@emotion/css'
-import { GET_USER } from 'queries'
+import { GET_USER } from '@src/queries'
 import { useQuery, useReactiveVar } from '@apollo/client'
 
-import TaskList from 'screens/TaskList'
-import AvatarZ from 'screens/components/AvatarZ'
-import { TypeTaskFilter } from 'screens/TaskList/Filter'
-import { GetUserQuery } from 'queries/types'
-import { gSelectedBoard } from 'appState/appState'
+import TaskList from '@src/screens/TaskList'
+import AvatarZ from '@src/screens/components/AvatarZ'
+import { TypeTaskFilter } from '@src/screens/TaskList/Filter'
+import { GetUserQuery } from '@src/queries/types'
+import { gSelectedBoard } from '@src/appState/appState'
 
 const stylesTabLink = css`
   padding-bottom: 10px;

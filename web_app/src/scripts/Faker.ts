@@ -1,12 +1,12 @@
 
 import { ApolloClient, NormalizedCacheObject } from '@apollo/client'
-import { CREATE_BOARD, CREATE_COMMENT, CREATE_REPLY_COMMENT, CREATE_TASK, LOGIN, SIGN_UP } from 'queries'
+import { CREATE_BOARD, CREATE_COMMENT, CREATE_REPLY_COMMENT, CREATE_TASK, LOGIN, SIGN_UP } from '@src/queries'
 
-import { AUTH_TOKEN_LOCALSTORAGE_KEY } from 'appConstants'
+import { AUTH_TOKEN_LOCALSTORAGE_KEY } from '@src/appConstants'
 
 import * as falso from '@ngneat/falso'
-import { CreateBoardMutation, CreateCommentMutation, CreateReplyCommentMutation, CreateTaskMutation, SignUpMutation, TaskStateEnum } from 'queries/types'
-import { TaskPriorityEnum } from 'types/graphql-global-types'
+import { CreateBoardMutation, CreateCommentMutation, CreateReplyCommentMutation, CreateTaskMutation, SignUpMutation, TaskStateEnum } from '@src/queries/types'
+import { TaskPriorityEnum } from '@src/types/graphql-global-types'
 /**
  * Reuse this code for integration tests
  */

@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
 import { useQuery } from '@apollo/client'
-import { GET_COMMENTS } from 'queries'
+import { GET_COMMENTS } from '@src/queries'
 import { css } from '@emotion/css'
 import { Tooltip } from 'antd'
 import { HashLink } from 'react-router-hash-link'
 import Comment from './Comment'
-import { GetCommentsQuery } from 'queries/types'
+import { GetCommentsQuery } from '@src/queries/types'
 
 interface TCommentsProperties {
   isArchived: boolean

@@ -3,9 +3,9 @@ import { Droppable } from 'react-beautiful-dnd'
 import { css } from '@emotion/css'
 import { useQuery, useReactiveVar } from '@apollo/client'
 import { Link } from 'react-router-dom'
-import { COUNT_TASKS } from 'queries'
-import { gSelectedBoard } from 'appState/appState'
-import { CountTasksQuery } from 'queries/types'
+import { COUNT_TASKS } from '@src/queries'
+import { gSelectedBoard } from '@src/appState/appState'
+import { CountTasksQuery } from '@src/queries/types'
 
 export default () => {
   const board = useReactiveVar(gSelectedBoard)

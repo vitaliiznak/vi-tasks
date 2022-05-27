@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
     "target": "es2021",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -8,10 +7,20 @@
     "rootDir": "src",
     "lib": [
       "dom",
-      "dom.iterable"
+      "dom.iterable",
+      "esnext"
+    ],
+    "types": [
+      "vite/client",
+      "vite-plugin-svgr/client"
     ],
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "./src/*"
+      ]
+    },
     "allowJs": false,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
@@ -21,13 +30,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "sourceMap": true,
+    "jsx": "react-jsx",
   },
   "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
+    "src"
   ],
   "exclude": [
-    "node_modules/*",
     "./build/*",
     ".vscode"
   ],

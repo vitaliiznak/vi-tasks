@@ -4,8 +4,8 @@ import {
 } from 'antd'
 import { css } from '@emotion/css'
 import { useMutation, useQuery } from '@apollo/client'
-import { GET_TASK, GET_USERS, UPDATE_TASK } from 'queries'
-import { GetTaskQuery, GetUsersQuery, UpdateTaskMutation } from 'queries/types'
+import { GET_TASK, GET_USERS, UPDATE_TASK } from '@src/queries'
+import { GetTaskQuery, GetUsersQuery, UpdateTaskMutation } from '@src/queries/types'
 
 const cssFormItem = css`
   display: block;

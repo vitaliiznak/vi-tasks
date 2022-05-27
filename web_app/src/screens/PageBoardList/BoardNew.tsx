@@ -5,8 +5,8 @@ import {
 import { css } from '@emotion/css'
 import { useMutation } from '@apollo/client'
 import { FormInstance } from 'antd/lib/form/hooks/useForm'
-import { CREATE_BOARD } from 'queries'
-import { CreateBoardMutation } from 'queries/types'
+import { CREATE_BOARD } from '@src/queries'
+import { CreateBoardMutation } from '@src/queries/types'
 
 const cssFormItem = css`
   display: block;

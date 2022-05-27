@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/css'
-import { gSelectedBoard } from 'appState/appState'
+import { gSelectedBoard } from '@src/appState/appState'
 import CommentsList from './CommentsList'
 import AddComment from './AddComment'
 import { useReactiveVar } from '@apollo/client'

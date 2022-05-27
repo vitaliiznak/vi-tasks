@@ -24,7 +24,7 @@ const defaultOptions: DefaultOptions = {
 
 const cache = new InMemoryCache()
 const client = new ApolloClient<NormalizedCacheObject>({
-  uri: process.env.REACT_APP_GRAPHQL_URI,
+  uri: import.meta.env.VITE_APP_GRAPHQL_URI,
   link: createLink({
     tokenStorage: localStorageNode
   }),

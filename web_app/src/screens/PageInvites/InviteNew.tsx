@@ -4,8 +4,8 @@ import {
 } from 'antd'
 import { css } from '@emotion/css'
 import { useMutation, useReactiveVar } from '@apollo/client'
-import { CREATE_INVITE } from 'queries'
-import { gSelectedBoard } from 'appState/appState'
+import { CREATE_INVITE } from '@src/queries'
+import { gSelectedBoard } from '@src/appState/appState'
 import { Link } from 'react-router-dom'
 
 const { TextArea } = Input

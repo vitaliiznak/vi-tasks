@@ -12,7 +12,7 @@ const AvatarZ = ({
   avatarSrc,
   fullName = '',
   size = 'small',
-  src: source = avatarSrc ? `${process.env.REACT_APP_STORAGE_URI}/${avatarSrc}` : undefined,
+  src: source = avatarSrc ? `${import.meta.env.VITE_APP_STORAGE_URI}/${avatarSrc}` : undefined,
   ...properties
 }: TypePropertiesAvatar) => {
   const stylesContainer = `${css`

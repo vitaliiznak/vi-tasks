@@ -4,17 +4,17 @@ import {
 } from 'antd'
 import { css } from '@emotion/css'
 import { useMutation, useQuery, useReactiveVar } from '@apollo/client'
-import { PRIORITY } from 'appConstants'
-import { ARCHIVE_TASK, GET_TASK, UNARCHIVE_TASK } from 'queries'
+import { PRIORITY } from '@src/appConstants'
+import { ARCHIVE_TASK, GET_TASK, UNARCHIVE_TASK } from '@src/queries'
 import { EditOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 
-import UserCart from 'screens/components/CreatedByAssignedCard'
+import UserCart from '@src/screens/components/CreatedByAssignedCard'
 import TaskAddAssigneers from './TaskAddAssigneers'
 import Comments from './Comments'
-import { GetTaskQuery } from 'queries/types'
-import { gSelectedBoard } from 'appState/appState'
+import { GetTaskQuery } from '@src/queries/types'
+import { gSelectedBoard } from '@src/appState/appState'
 
 const { confirm } = Modal
 
@@ -178,7 +178,7 @@ const TaskItem = ({ id }: { id: string }) => {
             <div className={css`font-size: 12px; color: rgba(240,240,240, 0.7);`}>Attachments:</div>
             <ul>
               {task.attachments.map(attachment => {
-                return <li><a className={css`font-size: 10px;`} target="_blank" href={`${process.env.REACT_APP_STORAGE_URI}/${attachment?.uri}`}>{attachment?.filename}</a></li>
+                return <li><a className={css`font-size: 10px;`} target="_blank" href={`${import.meta.env.VITE_APP_STORAGE_URI}/${attachment?.uri}`}>{attachment?.filename}</a></li>
               })}
             </ul>
           </>
