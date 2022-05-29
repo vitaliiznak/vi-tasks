@@ -1,13 +1,8 @@
 import moment from 'moment'
-import crypto from 'crypto'
-import util from 'util'
-
 import { ApolloError } from 'apollo-server'
 import { executeWithConnection } from '../../dbConnection'
 import { TABLES } from '../../constants/db'
 import sql, { escapePostgresql } from '../../utils/sql'
-
-const randomBytesP = util.promisify(crypto.randomBytes)
 
 interface TContext {
   performedByUser: string
@@ -220,7 +215,6 @@ const create = ({
   description?: string
 }): Promise<TInvite> => executeWithConnection(
   async (conn) => {
-    //const tokenBuff = await randomBytesP(5)
     const token = Math.random().toString(36).substring(2, 7).toUpperCase()
     const insertKeys = ['board', 'token', 'created_by']
     const InviteToBoardInsertRow = [
@@ -302,7 +296,6 @@ const remove = (id: string): Promise<string> => executeWithConnection(async (con
   await conn.query(sqlStr)
   return id
 })
-
 
 const joinBoard = (
   { id, token }: {

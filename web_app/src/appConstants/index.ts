@@ -22,7 +22,7 @@ export const DASHBOARD_TASK_COLUMNS = {
   get TODO() {
     return {
       id: 'TODO',
-      title: 'BACKLOG',
+      title: 'TODO',
       list: [],
     }
   },

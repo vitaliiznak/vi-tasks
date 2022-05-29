@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { css } from '@emotion/css'
 import { gSelectedBoard } from '@src/appState/appState'
 import CommentsList from './CommentsList'

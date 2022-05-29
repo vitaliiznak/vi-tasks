@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { css } from '@emotion/css'
 import {
   Button, Divider, Tooltip, message,
@@ -10,11 +10,11 @@ const CONSOLE_COLORS = new Proxy({
   error: 'red',
   debug: 'blue',
 },
-{
-  get(target, property, receiver) {
-    return (target as any)[property] || '#212121'
-  },
-}) as any
+  {
+    get(target, property, receiver) {
+      return (target as any)[property] || '#212121'
+    },
+  }) as any
 
 export default (error: any = {}, className = '') => (
   <div className={className}>

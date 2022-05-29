@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Avatar as AvatarAntd } from 'antd'
 import { css } from '@emotion/css'
 

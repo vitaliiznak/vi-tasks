@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {
   Select, Form, Spin, Input, Checkbox,
 } from 'antd'

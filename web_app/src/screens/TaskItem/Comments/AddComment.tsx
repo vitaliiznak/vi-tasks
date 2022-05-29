@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {
   Comment, Form, Button, Input, message, Tooltip,
 } from 'antd'

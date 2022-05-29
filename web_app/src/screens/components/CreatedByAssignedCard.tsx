@@ -3,7 +3,7 @@ import { useReactiveVar } from '@apollo/client'
 import { css } from '@emotion/css'
 import { Tooltip } from 'antd'
 import { gSelectedBoard } from '@src/appState/appState'
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 import AvatarZ from './AvatarZ'
 

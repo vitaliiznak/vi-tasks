@@ -3,7 +3,7 @@ import {
 } from '@apollo/client/link/error'
 import { BatchHttpLink, } from '@apollo/client/link/batch-http'
 import {
-  ApolloLink, HttpLink
+  ApolloLink
 } from '@apollo/client'
 import { createUploadLink } from 'apollo-upload-client'
 import { AUTH_TOKEN_LOCALSTORAGE_KEY } from '../appConstants'

@@ -2,17 +2,16 @@
   "compilerOptions": {
     "target": "es2021",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "rootDir": "src",
+    "types": [
+      "vite/client"
+    ],
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
-    "types": [
-      "vite/client",
-      "vite-plugin-svgr/client"
     ],
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
@@ -39,15 +38,9 @@
     "./build/*",
     ".vscode"
   ],
-  "ts-node": {
-    // Do not forget to `npm i -D tsconfig-paths`
-    "compilerOptions": {
-      "module": "CommonJS"
-    },
-    "require": [
-      "tsconfig-paths/register"
-    ]
-  }
+  "typeRoots": [
+    "./node_modules/@types"
+  ]
 }
 // {
 //   "compilerOptions": {

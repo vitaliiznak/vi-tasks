@@ -1,9 +1,10 @@
 
-import React from 'react'
-import { Droppable } from 'react-beautiful-dnd'
+import React, { useRef } from 'react'
+
 import { css } from '@emotion/css'
 import { DASHBOARD_TASK_COLUMNS } from '@src/appConstants'
 import TaskCard from './TaskCard'
+import { useDrop } from 'react-dnd'
 
 const stylesColumn = css`
   display: flex;
@@ -34,40 +35,67 @@ const stylesList = css`
     overflow-y: auto;
     margin: 0 5px;
     width: 300px;
+    display:flex;
+    flex-direction:column;  
   }
   `
 
 const Column: React.FC<{
   col: {
-    id: string;
+    id: 'TODO' | 'IN_PROGRESS' | 'IN_REVIEW' | 'DONE';
     list: any[];
-  };
-}> = ({ col: { list, id } }) => (
-  <div className={stylesColumn}>
-    <h4>{(DASHBOARD_TASK_COLUMNS as any)[id].title}</h4>
-    <Droppable
-      droppableId={id}
-      ignoreContainerClipping
-    >
-      {(provided) => (
-        <div className={stylesList} {...provided.droppableProps} ref={provided.innerRef}>
-          <div className="cards_container">
-            {list.map((task, index) => (
-              <TaskCard
-                key={task.id}
-                task={task}
-                index={index}
-              />
-            ))}
-            <div className={css`min-height: 250px;`}>
-              {provided.placeholder}
-            </div>
+  },
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  getTaskPosition: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  moveTask: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  clearTaskMovement: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  finishTaskMovement: Function
+
+}> = ({ col: { list, id }, getTaskPosition, moveTask, clearTaskMovement, finishTaskMovement }) => {
+  const ref = useRef(null)
+  const [, connectDrop] = useDrop({
+    accept: 'TASK',
+    hover(draggedTask: any) {
+      moveTask(draggedTask.id, { columnId: id, row: list.length })
+    },
+    drop: (draggedTask: any) => {
+      finishTaskMovement(draggedTask.id, { columnId: id, row: list.length })
+    }
+  })
+  connectDrop(ref)
+
+  return (
+    <div className={stylesColumn}>
+      <h4>{DASHBOARD_TASK_COLUMNS[id].title}</h4>
+      <div
+        className={stylesList}>
+        <div
+          className="cards_container">
+          {list.map((task, index) => (
+            <TaskCard
+              key={task.id}
+              task={task}
+              index={index}
+              columnId={DASHBOARD_TASK_COLUMNS[id].id}
+              getTaskPosition={getTaskPosition}
+              moveTask={moveTask}
+              finishTaskMovement={finishTaskMovement}
+              clearTaskMovement={clearTaskMovement}
+            />
+          ))}
+          <div
+            ref={ref}
+            className={css`
+              min-height: 250px; 
+              background: red; 
+              flex: 1;`}>
           </div>
         </div>
-      )}
-    </Droppable>
-  </div>
-
-)
-
+      </div>
+    </div>
+  )
+}
 export default Column

@@ -13,6 +13,8 @@ import {
 } from 'react-router-dom'
 import { css } from '@emotion/css'
 import { useLazyQuery, useReactiveVar } from '@apollo/client'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
 
 import PageLogin from '@src/screens/PageEnter'
 import PageUsers from '@src/screens/PageUserList'
@@ -29,7 +31,7 @@ import { GET_BOARD, GET_BOARDS, GET_ME } from '@src/queries'
 import { gBoards, gSelectedBoard, gUserMe } from '@src/appState/appState'
 import PageInviteAuthenteticated from '@src/screens/PageInvite'
 import PageInvitePublic from '@src/screensPublic/PageInvite'
-import Calendar from '@src/screens/Calendar'
+import Calendar from '@src/screens/PageCalendar'
 import SideMenu from './SideMenu'
 import { GetBoardQuery, GetBoardsQuery, AccountMeQuery } from '@src/queries/types'
 import InviteList from '@src/screens/PageInvites/InviteList'
@@ -164,7 +166,9 @@ const Routes = (): ReactElement => {
             <Route index element={<PageSelectBoard />} />
             <Route path={':boardId'} >
               <Route index element={(
-                <PageDashboard />
+                <DndProvider backend={HTML5Backend}>
+                  <PageDashboard />
+                </DndProvider>
               )} />
 
               <Route path="invites"

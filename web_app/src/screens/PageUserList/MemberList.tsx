@@ -1,5 +1,5 @@
 import { List } from 'antd'
-import React from 'react'
+
 import { useQuery, useReactiveVar } from '@apollo/client'
 import { GET_USERS } from '@src/queries'
 import { Link } from 'react-router-dom'

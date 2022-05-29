@@ -165,7 +165,6 @@ class Faker {
       })
       credentials.push(resSignup!.data!.accountSignup)
     }
-    console.log(credentials)
 
     // create invites
 

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {
   Table, Tooltip, Tag,
 } from 'antd'

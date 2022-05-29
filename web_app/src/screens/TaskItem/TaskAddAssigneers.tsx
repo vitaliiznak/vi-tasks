@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {
   Button, Form, Result, Select, Spin,
 } from 'antd'

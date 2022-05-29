@@ -32,7 +32,6 @@ export default (
       },
     })
       .then((res) => {
-        console.log('res', res)
         if (!res?.data?.inviteJoinBoard) {
           setErrorMessage('The token is invalid or link has expired')
           // throw new Error('The token is invalid or link has expired')

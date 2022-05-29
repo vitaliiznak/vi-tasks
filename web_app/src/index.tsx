@@ -1,20 +1,20 @@
 
 
 import './index.less'
-import React from 'react'
-import ReactDOM from 'react-dom'
+
 import { createRoot } from 'react-dom/client'
 
 import App from './App/App'
+import { StrictMode } from 'react'
 // import serviceWorker from './serviceWorker'
 
 const ToRenter = (
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 )
 
-const container = document.getElementById('root')
+const container = document.getElementById('root')!
 const root = createRoot(container)
 root.render(
   ToRenter

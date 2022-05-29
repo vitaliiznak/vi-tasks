@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {
   Table, Card, Tag, Tooltip, message, Button,
 } from 'antd'
