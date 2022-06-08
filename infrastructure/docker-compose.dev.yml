@@ -43,6 +43,6 @@ services:
       - NODE_PATH=src
       - DATABASE_NAME=postgres
       - DATABASE_USER=user
-      - DATABASE_PASSWORD=Ppass
+      - DATABASE_PASSWORD=pass
       - DATABASE_SCHEMA=public
       - JWT_SECRET=secret

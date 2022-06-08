@@ -1,10 +1,8 @@
 
 import util from 'util'
 import bcrypt from 'bcrypt'
-import faker from '@faker-js/faker'
+import { faker } from '@faker-js/faker'
 import { executeWithConnection } from '../dbConnection'
-import BoardService from '../services/board'
-import TaskService from '../services/task'
 import sql, { escapePostgresql } from '../utils/sql'
 import { TABLES } from '../constants/db'
 

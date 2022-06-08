@@ -146,9 +146,7 @@ export default ({
 
             </p>
             <p className="ant-upload-hint">
-              Support for a single or bulk upload. Strictly prohibit from uploading
-              company data or other
-              band files
+              Support for a single or bulk upload. Accepts pdf or image formats
             </p>
           </Dragger>
         </Form.Item>

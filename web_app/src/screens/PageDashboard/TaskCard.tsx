@@ -9,7 +9,7 @@ import UserCart from '@src/screens/components/CreatedByAssignedCard'
 import { gSelectedBoard } from '@src/appState/appState'
 import { useReactiveVar } from '@apollo/client'
 import { useRef } from 'react'
-import { GetTasksQuery } from '@src/queries/types'
+import { Task } from '@src/queries/types'
 
 const { Paragraph, Title } = Typography
 const classStylesDragable = css`
@@ -37,7 +37,7 @@ const TaskCard = ({
 }: {
   index: number
   columnId: string
-  task: Array<GetTasksQuery['tasks'][number] & { isDragging?: boolean }>
+  task: Task & { isDragging?: boolean }
   // eslint-disable-next-line @typescript-eslint/ban-types
   getTaskPosition: Function
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -69,12 +69,7 @@ const TaskCard = ({
         isDragging: monitor.isDragging()
       }),
       end: (item, monitor) => {
-        //console.log('monitor', monitor.didDrop())
-        //const draggedPosition = getTaskPosition(draggedTask.id)
-        console.log(monitor)
-        const didDrop = monitor.didDrop()
-
-        if (!didDrop) {
+        if (!monitor.didDrop()) {
           moveTask(item.id, item.originalPosition)
         }
         clearTaskMovement(item.id, item.originalPosition)
@@ -85,8 +80,8 @@ const TaskCard = ({
 
   const [, connectDrop] = useDrop(() => ({
     accept: 'TASK',
-    hover: (draggedTask: any, ...rest) => {
-      if (draggedTask.id !== id) {
+    hover: (draggedTask: any, monitor) => {
+      if (monitor.isOver({ shallow: true }) && draggedTask.id !== id) {
         const draggedOverPosition = getTaskPosition(id)
         moveTask(draggedTask.id, draggedOverPosition)
       }

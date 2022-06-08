@@ -36,7 +36,11 @@
   ],
   "exclude": [
     "./build/*",
-    ".vscode"
+    ".vscode",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx"
   ],
   "typeRoots": [
     "./node_modules/@types"

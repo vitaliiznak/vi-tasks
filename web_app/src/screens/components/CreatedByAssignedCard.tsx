@@ -15,11 +15,11 @@ const CreatedByAssignedCard = ({
   link,
 }: {
   id: string,
-  avatar: {
-    file: {
-      uri: string
-    }
-  },
+  avatar?: {
+    file?: {
+      uri?: string
+    } | null
+  } | null,
   fullName: string,
   email: string,
   link?: string

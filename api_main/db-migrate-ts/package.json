@@ -1,0 +1,20 @@
+{
+  "name": "db-migrate-ts",
+  "version": "0.0.1",
+  "description": "A db-migrate plugin to enable TypeScript style migrations.",
+  "main": "index.js",
+  "peerDependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/db-migrate/plugin-typescript.git"
+  },
+  "peerDependencies": {
+    "ts-node": "x.x.x"
+  },
+  "author": "Vitalii Znak",
+  "license": "MIT"
+}

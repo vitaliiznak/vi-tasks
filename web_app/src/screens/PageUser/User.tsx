@@ -107,7 +107,7 @@ export default () => {
             checked={showArchiveTasks}
             onClick={onShowArchivedTasks}
           >
-            Show with archived tasks
+            Include archived tasks
           </Checkbox>
         </Space>
       </div>

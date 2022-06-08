@@ -128,24 +128,11 @@ class Faker {
 
   public populateUsers = async (opts: { num?: number } = {}
   ) => {
-    /*
-    export const SIGN_UP = gql`
-      mutation SignUp(
-          $input: AccountSignupInput!
-        ) {
-        accountSignup(input: $input) {
-          id,
-          email,
-          fullName,
-          token
-        }
-      }
-    ` */
     const num = opts.num || 1
 
     const firstName = falso.randLastName({ withAccents: false })
     const lastName = falso.randFullName({ withAccents: false })
-    const credentials: Array<SignUpMutation['accountSignup']> = []
+    // const credentials: Array<SignUpMutation['accountSignup']> = []
     for (let i = 0; i < num; i++) {
       const resSignup = await this.client.mutate<SignUpMutation>({
         mutation: SIGN_UP,
@@ -163,7 +150,7 @@ class Faker {
       }).catch(err => {
         console.error(err)
       })
-      credentials.push(resSignup!.data!.accountSignup)
+      // credentials.push(resSignup!.data!.accountSignup)
     }
 
     // create invites

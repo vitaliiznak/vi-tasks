@@ -89,8 +89,7 @@ const Column: React.FC<{
           <div
             ref={ref}
             className={css`
-              min-height: 250px; 
-              background: red; 
+              min-height: 250px;
               flex: 1;`}>
           </div>
         </div>

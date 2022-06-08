@@ -53,8 +53,6 @@ const getById = (id: string, ctx?: TContext): Promise<TUser | null> => executeWi
       ON ${TABLES.BOARD_ACCOUNT}.account = ${TABLES.ACCOUNT}.id
      ${whereClause}
     `
-  console.log(sqlStr)
-
   const result = await conn.query(sqlStr)
   return result.rows.length ? result.rows[0] : null
 })
