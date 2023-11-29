@@ -1,4 +1,4 @@
-export const TABLES = {
+exports.TABLES = {
   ACCOUNT: 'account',
   PROFILE: 'profile',
   TASK: 'task',
@@ -10,7 +10,7 @@ export const TABLES = {
   INVITE_TO_BOARD: 'INVITE_TO_BOARD',
 }
 
-export const INVITE_STATE = {
+exports.INVITE_STATE = {
   NEW: 'NEW',
   USED: 'USED',
   EXPIRED: 'EXPIRED',

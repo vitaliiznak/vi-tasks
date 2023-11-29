@@ -1,5 +1,6 @@
 {
   "name": "vi-tasks-api",
+  "type": "commonjs",
   "scripts": {
     "start": "dotenv -- nodemon  --watch 'src/**/*.ts' -e ts,graphql -x  ts-node src/server.ts",
     "start:dev": "dotenv -- nodemon  --watch 'src/**/*.ts' -e ts,graphql -x  ts-node src/server.ts",
@@ -10,17 +11,20 @@
     "lint:fix": "eslint --fix --ext .tsx --ext .ts  ."
   },
   "dependencies": {
+    "@graphql-tools/utils": "^10.0.11",
     "apollo-server": "^3.8.2",
+    "apollo-server-express": "^3.13.0",
     "bcrypt": "^5.0.1",
-    "bluebird": "^3.7.2",
     "cors": "^2.8.5",
-    "db-migrate": "~0.11.13",
-    "db-migrate-pg": "^1.2.2",
+    "db-migrate": "~0.11.14",
+    "db-migrate-pg": "^1.5.2",
+    "db-migrate-ts": "file:./db-migrate-ts",
     "express": "^4.18.1",
     "file-type-stream": "^1.0.0",
     "graphql": "~16.5.0",
     "graphql-constraint-directive": "^3.1.1",
     "graphql-scalars": "^1.17.0",
+    "graphql-tools": "^9.0.0",
     "graphql-type-json": "^0.3.2",
     "graphql-upload": "^15.0.1",
     "jsonwebtoken": "^8.5.1",
@@ -32,8 +36,7 @@
     "sqlstring": "^2.3.3",
     "stream-to-promise": "^3.0.0",
     "typescript": "^4.7.3",
-    "uuid": "^8.3.2",
-    "db-migrate-ts": "file:./db-migrate-ts"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@faker-js/faker": "~7.2.0",
@@ -57,6 +60,6 @@
     "umzug": "^3.1.1"
   },
   "resolutions": {
-    "graphql-upload": "^13.1.0"
+    "graphql-upload": "^13.0.0"
   }
 }

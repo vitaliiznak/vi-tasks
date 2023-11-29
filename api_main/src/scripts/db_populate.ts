@@ -6,6 +6,7 @@ import { executeWithConnection } from '../dbConnection'
 import sql, { escapePostgresql } from '../utils/sql'
 import { TABLES } from '../constants/db'
 
+console.log('here', {sql, escapePostgresql })
 
 const password = '12345'
 const saltRounds = 10
@@ -81,13 +82,7 @@ const populateAccounts = () => executeWithConnection(async (conn) => {
   //   )
   // }
 
-  console.info('Populate agents')
-
-  console.info('finish populate agents')
-
-  console.info('Populate agents')
-
-  console.info('finish populate agents')
+  console.info('finish populate')
 })
 
 populateAccounts()

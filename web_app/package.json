@@ -5,7 +5,6 @@
   "scripts": {
     "start": "BROWSER=none vite",
     "build": "tsc && vite build",
-    "serve": "vite preview",
     "start:with:error-boundary": "BROWSER=none NODE_ENV=production VITE_APP_IS_ERROR_BOUNDARY=1 vite",
     "build:dev": "dotenv -e .development.env tsc && vite build",
     "build:prod": "dotenv -e .prod.env tsc && vite build",

@@ -22,6 +22,13 @@ cd ./api_main
 npm i
 ```
 
+<div style='font-size:14px;'>Add .env file to api_main</div>
+
+```bash
+cd ./api_main
+cp _env env
+```
+
 <div style='font-size:14px;'>Create DB tables (run migration script)</div>
 
 ```bash
@@ -37,7 +44,7 @@ Check docker-compose.dev.yml to know DB username/password and other env. info</d
 
 ```bash
 cd ./api_main
-npm run db-migrate up
+npm run populate-db
 ```
 
 <div style='font-size:12px; margin-top: -10px; padding-top: 0;'>It will create users with credentials: <span style='font-weight:700;'>john@mail.com/12345</span> and <span style='font-weight:700;'>mike@mail.com/12345</span></div>
@@ -58,6 +65,26 @@ npm run db-migrate up
   The Graphql playground is accessible by the link above
   
 </div>
+
+
+
+
+
+<div style='font-size:16px; margin-top: 15px;'>Start web app</div>
+
+<div style='font-size:14px;'>Add .env file to web_app</div>
+
+```bash
+  cd ./web_app
+  cp _env .env
+```
+
+<div style='font-size:14px;'>Run web app</div>
+
+```bash
+  cd ./web_app
+  npm run start
+```
 
 <!-- To start
 ```

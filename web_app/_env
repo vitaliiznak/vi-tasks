@@ -1,0 +1,6 @@
+DATABASE_NAME=postgres
+DATABASE_USER=user
+DATABASE_PASSWORD=pass
+DATABASE_SCHEMA=public
+JWT_SECRET=sectet
+VITE_APP_GRAPHQL_URI=http://localhost:4000/graphql

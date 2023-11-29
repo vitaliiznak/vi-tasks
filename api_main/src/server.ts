@@ -2,9 +2,9 @@ import { ApolloServer, gql, } from 'apollo-server-express'
 import express from 'express'
 import { merge } from 'lodash'
 import cors from 'cors'
-import GraphQLUpload from 'graphql-upload/GraphQLUpload.js'
-import graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.js'
-import { makeExecutableSchema } from '@graphql-tools/schema'
+import { makeExecutableSchema } from 'graphql-tools'
+
+
 import { constraintDirectiveTypeDefs } from 'graphql-constraint-directive'
 import jwt from 'jsonwebtoken'
 import {
@@ -58,6 +58,7 @@ import { typeDefs as BoardDefs, resolvers as BoardResolvers } from './domain/boa
 import authDirective from './directives/Auth'
 import type { TAccountWithToken } from './services/account/account'
 import deprecatedDirective from './directives/Deprecated'
+import { GraphQLUpload, graphqlUploadExpress } from 'graphql-upload'
 
 const { deprecatedDirectiveTypeDefs, deprecatedDirectiveTransformer } = deprecatedDirective('deprecated')
 const { authDirectiveTypeDefs, authDirectiveTransformer } = authDirective('auth')

@@ -14,7 +14,7 @@
     ],
     "allowJs": true,
     "esModuleInterop": true,
-    "target": "ES2018",
+    "target": "ES2022",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": false,
@@ -29,7 +29,7 @@
     // "noLib": true,                                    /* Disable including any library files, including the default lib.d.ts. */
     // "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
     /* Modules */
-    "module": "commonjs",
+    "module": "NodeNext",
     // "rootDir": "./",                                  /* Specify the root folder within your source files. */
     // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */

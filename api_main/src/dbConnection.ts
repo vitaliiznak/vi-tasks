@@ -1,12 +1,11 @@
 import pg from 'pg'
-import bluebird from 'bluebird'
 
 import { escapePostgresql } from './utils/sql'
 
 const DATABASE_PORT = Number(process.env.DATABASE_PORT) || 5432
 
 const pool = new pg.Pool({
-  Promise: bluebird,
+  Promise: Promise,
   host: process.env.DATABASE_HOST || 'localhost',
   port: Number.isInteger(DATABASE_PORT) ? DATABASE_PORT : 5432,
   database: process.env.DATABASE_NAME,

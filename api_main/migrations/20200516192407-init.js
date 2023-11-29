@@ -2,8 +2,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck - may need to be at the start of file
 
-import sql from '../src/utils/sql'
-import { TABLES, INVITE_STATE } from '../src/constants/db'
+const sql = require('../src/utils/sql').default
+const { TABLES, INVITE_STATE } = require( '../src/constants/db')
 
 let dbm
 let type
@@ -195,3 +195,4 @@ exports.down = async db => {
 exports._meta = {
   version: 1
 }
+
